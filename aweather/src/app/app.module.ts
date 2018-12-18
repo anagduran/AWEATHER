@@ -14,12 +14,14 @@ import { AppComponent } from './app.component';
 import { WeatherCardComponent } from './weather-card/weather-card.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { WeatherForecastComponent } from './weather-forecast/weather-forecast.component';
+import { WeatherSearchComponent } from './weather-search/weather-search.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     WeatherCardComponent,
-    WeatherForecastComponent
+    WeatherForecastComponent,
+    WeatherSearchComponent
   ],
   imports: [
     BrowserModule,
