@@ -5,7 +5,8 @@ import {
   MatButtonModule,
   MatDividerModule,
   MatGridListModule,
-  MatProgressSpinnerModule
+  MatProgressSpinnerModule,
+  MatFormFieldModule
    } from '@angular/material';
 
 
@@ -15,6 +16,7 @@ import { WeatherCardComponent } from './weather-card/weather-card.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { WeatherForecastComponent } from './weather-forecast/weather-forecast.component';
 import { WeatherSearchComponent } from './weather-search/weather-search.component';
+import {FormsModule} from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -30,7 +32,9 @@ import { WeatherSearchComponent } from './weather-search/weather-search.componen
     MatDividerModule,
     MatGridListModule,
     MatProgressSpinnerModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    MatFormFieldModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

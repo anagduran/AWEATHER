@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-weather-search',
@@ -8,7 +8,10 @@ import { Component, OnInit } from '@angular/core';
 export class WeatherSearchComponent implements OnInit {
 
   loading: boolean;
+  cityName: string;
   constructor() { }
+
+  @Output() searchEvent: EventEmitter<string> = new EventEmitter<string>();
 
   ngOnInit() {
     this.loading = false;
@@ -16,6 +19,7 @@ export class WeatherSearchComponent implements OnInit {
 
   public searchCity($event) {
     this.loading = !this.loading;
+    this.searchEvent.emit(this.cityName);
   }
 
 }
