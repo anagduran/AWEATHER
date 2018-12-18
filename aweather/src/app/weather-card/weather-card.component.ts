@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {Weather} from '../weather.model';
+import { Forecast } from '../forecast.model';
 
 @Component({
   selector: 'app-weather-card',
@@ -9,11 +10,13 @@ import {Weather} from '../weather.model';
 export class WeatherCardComponent implements OnInit {
 
   weather: Weather = new Weather();
+  rutaImagen: String;
 
   constructor() { }
 
   ngOnInit() {
     console.log('ngOnInit');
+    this.rutaImagen = 'https://drive.google.com/uc?id=1DRGmofyk2KbKvY8HF8vvqcBGj7VRXKnY';
 
     setTimeout(() => {
       this.weather.city = 'Madrid ES';
@@ -28,6 +31,12 @@ export class WeatherCardComponent implements OnInit {
       this.weather.temperature = 18;
       this.weather.winddirection = 180;
       this.weather.windspeed = 26;
+      this.weather.forecast = new Forecast();
+      this.weather.forecast.date = '04 May 2018';
+      this.weather.forecast.day = 'Fri';
+      this.weather.forecast.info = 'Mostly Cloudy';
+      this.weather.forecast.maxTemperature = 23;
+      this.weather.forecast.minTemperature = 8;
       console.log('call to server finalizado');
       console.log(this.weather);
 

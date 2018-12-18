@@ -13,11 +13,13 @@ import {
 import { AppComponent } from './app.component';
 import { WeatherCardComponent } from './weather-card/weather-card.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { WeatherForecastComponent } from './weather-forecast/weather-forecast.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    WeatherCardComponent
+    WeatherCardComponent,
+    WeatherForecastComponent
   ],
   imports: [
     BrowserModule,
