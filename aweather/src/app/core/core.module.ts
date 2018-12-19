@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { LeftMenuComponent } from './left-menu/left-menu.component';
 import { TopMenuComponent } from './top-menu/top-menu.component';
 import {MatToolbarModule, MatListModule, MatDividerModule} from '@angular/material';
+import { SharedModule } from '../shared/shared.module';
 
 @NgModule({
   declarations: [LeftMenuComponent, TopMenuComponent],
@@ -10,7 +11,8 @@ import {MatToolbarModule, MatListModule, MatDividerModule} from '@angular/materi
     CommonModule,
     MatToolbarModule,
     MatListModule,
-    MatDividerModule
+    MatDividerModule,
+    SharedModule
   ],
   exports: [LeftMenuComponent, TopMenuComponent]
 })
