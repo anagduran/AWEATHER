@@ -1,40 +1,20 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import {
-  MatCardModule,
-  MatButtonModule,
-  MatDividerModule,
-  MatGridListModule,
-  MatProgressSpinnerModule,
-  MatFormFieldModule
-   } from '@angular/material';
-
-
 
 import { AppComponent } from './app.component';
-import { WeatherCardComponent } from './weather-card/weather-card.component';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { WeatherForecastComponent } from './weather-forecast/weather-forecast.component';
-import { WeatherSearchComponent } from './weather-search/weather-search.component';
-import {FormsModule} from '@angular/forms';
+import { CoreModule } from './core/core.module';
+import { SharedModule } from './shared/shared.module';
+import { WeatherModule } from './weather/weather.module';
 
 @NgModule({
   declarations: [
-    AppComponent,
-    WeatherCardComponent,
-    WeatherForecastComponent,
-    WeatherSearchComponent
+    AppComponent
   ],
   imports: [
     BrowserModule,
-    MatCardModule,
-    MatButtonModule,
-    MatDividerModule,
-    MatGridListModule,
-    MatProgressSpinnerModule,
-    BrowserAnimationsModule,
-    MatFormFieldModule,
-    FormsModule
+    CoreModule,
+    SharedModule,
+    WeatherModule
   ],
   providers: [],
   bootstrap: [AppComponent]
