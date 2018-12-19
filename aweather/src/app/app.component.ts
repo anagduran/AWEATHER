@@ -7,8 +7,8 @@ import { Component } from '@angular/core';
 })
 export class AppComponent  {
 
- /* cityName = 'app';
-  title = 'app';
+  cityName = 'app';
+  /*title = 'app';
 
     public search(cityName: string): void {
       this.cityName = cityName;
