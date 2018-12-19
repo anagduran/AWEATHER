@@ -1,10 +1,11 @@
 <mat-card>
     <mat-card-content>
       <mat-form-field>
-        <input matInput placeholder="Ciudad0" name="cityName" [value]="cityName" (input)="cityName=$event.target.value">
+        <input matInput placeholder="Ciudad" name="cityName" [value]="cityName" (input)="cityName=$event.target.value">
         <!--<input matInput placeholder="Ciudad" name="CiyName" [(ngModel)]="cityName">-->
       </mat-form-field>
-      <button mat-raised-button color="primary" (click)="searchCity($event)" >Buscar Ciudad</button>
-      <mat-spinner [style.visibility] ="loading ? 'visible' : 'hidden'"></mat-spinner>
+      <button mat-raised-button color="primary" [ngClass]="cityName !== undefined && cityName!=='' ? 'active' : 'no-active'" (click)="searchCity($event)" >Buscar Ciudad</button>
+      <mat-spinner *ngIf="loading"></mat-spinner>
+      <!--<mat-spinner [style.visibility] ="loading ? 'visible' : 'hidden'"></mat-spinner>-->
     </mat-card-content>
 </mat-card>
