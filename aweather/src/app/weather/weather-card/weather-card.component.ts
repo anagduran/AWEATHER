@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {Weather} from '../weather.model';
 import { Forecast } from '../forecast.model';
+import { WeatherService } from '../services/weather.service';
 
 @Component({
   selector: 'app-weather-card',
@@ -12,10 +13,14 @@ export class WeatherCardComponent implements OnInit {
   weather: Weather = new Weather();
   rutaImagen: String;
 
-  constructor() { }
+  constructor(
+    private _weatherService: WeatherService
+  ) { }
 
   ngOnInit() {
-    console.log('ngOnInit');
+
+    this.weather = this._weatherService.getWeatherInfo('Madrid');
+   /* console.log('ngOnInit');
     this.rutaImagen = 'https://drive.google.com/uc?id=1DRGmofyk2KbKvY8HF8vvqcBGj7VRXKnY';
 
     setTimeout(() => {
@@ -40,7 +45,7 @@ export class WeatherCardComponent implements OnInit {
       console.log('call to server finalizado');
       console.log(this.weather);
 
-    }, 1000);
+    }, 1000);*/
 
     /*setTimeout(() => {
       this.weather.temperature = 20;
