@@ -5,6 +5,8 @@ import { WeatherIconComponent } from './weather-icon/weather-icon.component';
 import { DropdownDirective } from './dropdown.directive';
 import { DropdowntoggleDirective } from './dropdowntoggle.directive';
 import { CelsiusPipe } from './pipes/celsius.pipe';
+import { HttpClientModule } from '../../../node_modules/@angular/common/http';
+
 
 
 @NgModule({
@@ -13,6 +15,13 @@ import { CelsiusPipe } from './pipes/celsius.pipe';
     CommonModule,
     MaterialFormsModule
   ],
-  exports: [MaterialFormsModule, WeatherIconComponent, DropdownDirective, DropdowntoggleDirective, DropdowntoggleDirective, CelsiusPipe]
+  exports: [
+    MaterialFormsModule,
+    WeatherIconComponent,
+    DropdownDirective,
+    DropdowntoggleDirective,
+    DropdowntoggleDirective,
+    HttpClientModule,
+    CelsiusPipe]
 })
 export class SharedModule {}

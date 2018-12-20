@@ -18,8 +18,20 @@ export class WeatherCardComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-
-    this.weather = this._weatherService.getWeatherInfo('Madrid');
+     this._weatherService.getWeatherInfo('dallas, tx').subscribe(
+        data => {
+          if (data['query'].results === undefined) {
+            alert('la ciudad buscada no existe');
+          } else {
+            this.weather = this._weatherService.mapResult(data['query'].results.channel);
+          }
+        },
+        error => {
+          alert(error.message);
+        }
+      );
+    }
+    // this.weather = this._weatherService.getWeatherInfo('Madrid');
    /* console.log('ngOnInit');
     this.rutaImagen = 'https://drive.google.com/uc?id=1DRGmofyk2KbKvY8HF8vvqcBGj7VRXKnY';
 
@@ -50,7 +62,7 @@ export class WeatherCardComponent implements OnInit {
     /*setTimeout(() => {
       this.weather.temperature = 20;
     }, 3000);*/
-  }
+
     // tslint:disable-next-line:comment-format
     // modificar el color de la temperatura depediendo de si es muy alta o muy baja//
 
