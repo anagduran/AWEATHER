@@ -1,0 +1,31 @@
+<mat-card class="login-card" (mouseover)='bluringBackground()' (mouseleave)='unbluringBackground()'>
+    <div class="login_logo">
+      <img src="https://drive.google.com/uc?id=1UCuwEFL2_wANdGi7_6N7_xs5YDoBSzuq" alt="Aweather" title="Aweather" />
+    </div>
+    <div class="border-top-input">
+      <form #loginForm="ngForm" (ngSubmit)="loginSubmit(loginForm)">
+        <mat-card-content>
+          <mat-grid-list cols="1" rowHeight="60px">
+            <mat-grid-tile>
+              <mat-form-field>
+                <input matInput placeholder="Usuario" name="user" [(ngModel)]="user">
+              </mat-form-field>
+            </mat-grid-tile>
+            <mat-grid-tile>
+              <mat-form-field>
+                <input matInput placeholder="Contraseña" name="password" [(ngModel)]="password">
+              </mat-form-field>
+            </mat-grid-tile>
+          </mat-grid-list>
+          <mat-card-actions class="mat-card-button-login">
+            <button mat-raised-button class="submit" class="login-button mat-primary">
+              <i class="fas fa-key fa-lg"></i>
+            </button>
+          </mat-card-actions>
+        </mat-card-content>
+      </form>
+    </div>
+  </mat-card>
+  
+ 
+ 
