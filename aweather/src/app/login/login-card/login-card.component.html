@@ -3,17 +3,17 @@
       <img src="https://drive.google.com/uc?id=1UCuwEFL2_wANdGi7_6N7_xs5YDoBSzuq" alt="Aweather" title="Aweather" />
     </div>
     <div class="border-top-input">
-      <form #loginForm="ngForm" (ngSubmit)="loginSubmit(loginForm)">
+      <form [formGroup]="loginGroup">
         <mat-card-content>
           <mat-grid-list cols="1" rowHeight="60px">
             <mat-grid-tile>
               <mat-form-field>
-                <input matInput placeholder="Usuario" name="user" [(ngModel)]="user">
+                <input matInput placeholder="Usuario" formControlName="user" name="user">
               </mat-form-field>
             </mat-grid-tile>
             <mat-grid-tile>
               <mat-form-field>
-                <input matInput placeholder="Contraseña" name="password" [(ngModel)]="password">
+                <input matInput placeholder="Contraseña" formControlName="password"  name="password">
               </mat-form-field>
             </mat-grid-tile>
           </mat-grid-list>
